@@ -44,7 +44,7 @@ const Header = () => {
       <div
         className={`absolute md:hidden transition-all duration-500 z-50 top-16 ${
           openNavbar ? "left-0" : "-left-[100%]"
-        } w-full h-screen bg-skin2`}
+        } w-full h-fit pb-16 bg-skin2`}
       >
         <Navsidebar closeSidebar={closeSidebar} />
       </div>

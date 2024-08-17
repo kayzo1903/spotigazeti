@@ -16,12 +16,12 @@ export default function Page({ params }: any) {
           yaliyo wahi chapishwa na spotigazeti
         </p>
       </div>
-      <div className="w-full h-screen">
+      <div className="w-full h-fit">
         <div className="flex w-full px-2">
-          <div className="w-full lg:w-9/12 space-y-4 flex flex-wrap gap-4">
+          <div className="w-full lg:w-9/12 space-y-4 flex flex-wrap gap-4 ">
            { <Contents category={category.categories} />}
           </div>
-          <div className="hidden lg:block lg:w-3/12">
+          <div  className="hidden lg:block lg:w-3/12">
             <Aside />
           </div>
         </div>
