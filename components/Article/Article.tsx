@@ -99,6 +99,7 @@ const Article: React.FC<articleInterface> = ({ heading }) => {
       <div className="flex w-full flex-wrap justify-center items-start gap-4 h-fit py-4">
         {relatedPosts.map((relatedPost) => (
           <Postscards
+          key={relatedPost.slug.current}
             category={relatedPost.categories.title}
             date={relatedPost.publishedAt}
             image={relatedPost.mainImage.asset}
