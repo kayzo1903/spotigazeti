@@ -75,7 +75,11 @@ const Article: React.FC<articleInterface> = ({ heading }) => {
                   educator & author at spotigazeti
                 </p>
                 <p className="text-base text-gray-500 dark:text-gray-400">
-                  <time>{new Date(post.publishedAt).toLocaleDateString()}</time>
+                  <time>
+                    {new Date(
+                      post.publishedAt ?? new Date().toISOString()
+                    ).toLocaleDateString()}
+                  </time>
                 </p>
               </div>
             </div>
@@ -84,7 +88,7 @@ const Article: React.FC<articleInterface> = ({ heading }) => {
         <div className="w-full rounded-lg h-96 relative shadow-lg py-4">
           <Image
             src={urlForImage(post.mainImage.asset.url)}
-            alt={post.slug}
+            alt={post.slug.current}
             loading="lazy"
             fill={true}
             style={{ objectFit: "cover" }}
@@ -99,10 +103,10 @@ const Article: React.FC<articleInterface> = ({ heading }) => {
       <div className="flex w-full flex-wrap justify-center items-start gap-4 h-fit py-4">
         {relatedPosts.map((relatedPost) => (
           <Postscards
-          key={relatedPost.slug.current}
-            category={relatedPost.categories.title}
+            key={relatedPost.slug.current}
+            category={relatedPost.categories[0].title}
             date={relatedPost.publishedAt}
-            image={relatedPost.mainImage.asset}
+            image={relatedPost.mainImage.asset.url}
             slug={relatedPost.slug.current}
             title={relatedPost.title}
           />
