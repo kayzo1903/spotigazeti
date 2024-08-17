@@ -25,14 +25,12 @@ const Contents: React.FC<catInterface> = ({ category }) => {
     };
 
     fetchPosts();
-  }, [category
-
-  ]); // Empty dependency array means it runs once on mount
+  }, [category]); // Empty dependency array means it runs once on mount
 
   return (
-    <div className="flex w-full flex-wrap justify-center items-start gap-4">
+    <div className="flex w-full flex-wrap justify-center items-start gap-4 h-fit">
       {filteredPost.length === 0 ? (
-        <h1>No posts yet</h1>
+        <h1>Loading...</h1>
       ) : (
         filteredPost.map((item, index) => (
           <Postscards

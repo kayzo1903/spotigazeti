@@ -19,7 +19,7 @@ export default function Page({ params }: any) {
       <div className="w-full h-screen">
         <div className="flex w-full px-2">
           <div className="w-full lg:w-9/12 space-y-4 flex flex-wrap gap-4">
-            <Contents category={category.categories} />
+           { <Contents category={category.categories} />}
           </div>
           <div className="hidden lg:block lg:w-3/12">
             <Aside />
