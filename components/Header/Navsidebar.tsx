@@ -46,7 +46,7 @@ const Navsidebar: React.FC<NavsidebarProps> = ({ closeSidebar }) => {
           Jamii
         </Link>
       </nav>
-      <div className="w-full pt-16">
+      <div onClick={closeSidebar} className="w-full pt-16">
         <Aside />
       </div>
     </div>
