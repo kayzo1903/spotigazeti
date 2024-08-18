@@ -6,6 +6,10 @@ import Postscards from "../Cards/Postscards";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
 import { urlForImage } from "@/utils/imagebuilder";
+import ShareButton from "../Share/ShareButton";
+import Link from "next/link";
+import ArticleLoadingBlock from "../LoadingBlock/ArticleLoadingBlock";
+import Skeleton from "react-loading-skeleton";
 
 interface articleInterface {
   heading: string;
@@ -14,6 +18,9 @@ interface articleInterface {
 const Article: React.FC<articleInterface> = ({ heading }) => {
   const [post, setPost] = useState<PostInterfaces | null>(null);
   const [relatedPosts, setRelatedPosts] = useState<PostInterfaces[]>([]);
+  const slugUrl = post?.slug.current;
+  const encodedUrl = encodeURIComponent(slugUrl || "/ligikuu");
+  const url = `https://spotigazeti.vercel.app/Blog/Article/${encodedUrl}`;
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -45,16 +52,28 @@ const Article: React.FC<articleInterface> = ({ heading }) => {
   }, [heading]);
 
   if (!post) {
-    return <div>No post found for this category.</div>;
+    return (
+      <div className="w-full">
+        <ArticleLoadingBlock />
+      </div>
+    );
   }
 
   return (
     <article className="container space-y-4">
       <div className="w-full">
         <header className="mb-4 lg:mb-6 space-y-4">
-          <p className="text-gray-800 text-sm leading-3 capitalize px-4 py-2 rounded-sm bg-text w-fit">
-            {post.categories[0].title}
-          </p>
+          <div className="w-full flex flex-nowrap items-center justify-between">
+            <Link
+              href={`/Blog/${post.categories[0].title}`}
+              className="text-gray-800 text-sm leading-3 capitalize px-4 py-2 rounded-sm bg-text w-fit"
+            >
+              {post.categories[0].title}
+            </Link>
+            <div>
+              <ShareButton link={url} />
+            </div>
+          </div>
           <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl">
             {post.title}
           </h1>
@@ -100,7 +119,7 @@ const Article: React.FC<articleInterface> = ({ heading }) => {
         </div>
       </div>
       <PostBanner postcategories="Related Posts" />
-      <div className="flex w-full flex-wrap justify-center items-start gap-4 h-fit py-4">
+      <div className="flex w-full flex-wrap justify-center md:justify-start items-start gap-4 h-fit py-4">
         {relatedPosts.map((relatedPost) => (
           <Postscards
             key={relatedPost.slug.current}

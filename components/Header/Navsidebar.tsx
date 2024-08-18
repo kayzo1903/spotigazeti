@@ -8,7 +8,7 @@ interface NavsidebarProps {
 
 const Navsidebar: React.FC<NavsidebarProps> = ({ closeSidebar }) => {
   return (
-    <div className="w-full h-fit">
+    <div className="w-full h-screen overflow-y-auto">
       <nav className="flex flex-col items-center text-2xl gap-6 justify-center pt-16">
         <Link
           href="/Blog/ligikuu"
@@ -46,7 +46,7 @@ const Navsidebar: React.FC<NavsidebarProps> = ({ closeSidebar }) => {
           Jamii
         </Link>
       </nav>
-      <div onClick={closeSidebar} className="w-full pt-16">
+      <div className="w-full pt-16">
         <Aside />
       </div>
     </div>

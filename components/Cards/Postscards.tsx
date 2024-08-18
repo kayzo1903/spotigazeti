@@ -1,19 +1,24 @@
-import { urlForImage } from '@/utils/imagebuilder'
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
-
+import { urlForImage } from "@/utils/imagebuilder";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { FaShareAlt } from "react-icons/fa";
 
 interface Postcardinterface {
-    slug : string 
-    title : string
-    date : any 
-    category : string
-    image : string
+  slug: string;
+  title: string;
+  date: any;
+  category: string;
+  image: string;
 }
 
-
-const Postscards:React.FC<Postcardinterface> = ({category , date ,slug ,title , image}) => {
+const Postscards: React.FC<Postcardinterface> = ({
+  category,
+  date,
+  slug,
+  title,
+  image,
+}) => {
   return (
     <Link
       href={`/Blog/Article/${slug}`}
@@ -22,7 +27,7 @@ const Postscards:React.FC<Postcardinterface> = ({category , date ,slug ,title , 
       <Image
         src={urlForImage(image)} // urlForImage() takes the image reference and converts it to a URL
         alt={slug}
-        fill = {true}
+        fill={true}
         style={{ objectFit: "cover" }}
         loading="lazy"
       />
@@ -35,10 +40,13 @@ const Postscards:React.FC<Postcardinterface> = ({category , date ,slug ,title , 
         <h2 className="mb-2 text-xl font-semibold text-white transition duration-100">
           {title}
         </h2>
-        <span className="font-semibold text-text">{category}</span>
+        <div className="w-full flex justify-between flex-nowrap">
+          <span className="font-semibold text-text">{category}</span>
+          <FaShareAlt className="text-white" />
+        </div>
       </div>
     </Link>
-  )
-}
+  );
+};
 
-export default Postscards
+export default Postscards;

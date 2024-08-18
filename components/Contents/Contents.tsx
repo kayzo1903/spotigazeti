@@ -2,6 +2,7 @@
 import { getData } from "@/utils/Fetchs";
 import React, { useEffect, useState } from "react";
 import Postscards from "../Cards/Postscards";
+import PostcardsSkeleton from "../LoadingBlock/PostcardSkeleton";
 
 interface catInterface {
   category: string;
@@ -30,12 +31,14 @@ const Contents: React.FC<catInterface> = ({ category }) => {
   return (
     <div className="flex w-full flex-wrap justify-center items-start gap-4 h-fit">
       {filteredPost.length === 0 ? (
-        <h1>Loading...</h1>
+        <div>
+          <PostcardsSkeleton />
+        </div>
       ) : (
         filteredPost.map((item, index) => (
           <Postscards
             key={index}
-            category={item.categories[0]?.title  || 'spotigazeti'}
+            category={item.categories[0]?.title || "spotigazeti"}
             date={item.publishedAt}
             image={item.mainImage.asset.url}
             slug={item.slug.current}

@@ -12,7 +12,7 @@ const Header = () => {
   };
 
   return (
-    <header className="max-w-screen-xl text-white bg-skin2 mx-auto relative h-16">
+    <header className="max-w-screen-xl text-white bg-skin2 mx-auto relative h-16 sticky top-0 z-50">
       <div className="w-full flex p-5 justify-between items-center">
         <Link
           href="/"
@@ -37,14 +37,17 @@ const Header = () => {
             Jamii
           </Link>
         </nav>
-        <button onClick={() => setNavbarOpen(!openNavbar)} className="text-xl block md:hidden">
+        <button
+          onClick={() => setNavbarOpen(!openNavbar)}
+          className="text-xl block md:hidden"
+        >
           <FaList />
         </button>
       </div>
       <div
-        className={`absolute md:hidden transition-all duration-500 z-50 top-16 ${
+        className={`fixed md:hidden transition-all duration-500 z-50 top-16 ${
           openNavbar ? "left-0" : "-left-[100%]"
-        } w-full h-fit pb-16 bg-skin2`}
+        } w-full h-screen bg-skin2 overflow-y-auto`}
       >
         <Navsidebar closeSidebar={closeSidebar} />
       </div>
