@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import { ThemeProvider } from "@/components/Theme/Themeprovider";
 
 const inter = Roboto({
   subsets: ["latin"],
@@ -20,11 +21,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
+        <ThemeProvider 
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange>
         <Header />
         {children}
         <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

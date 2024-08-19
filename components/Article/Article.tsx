@@ -74,7 +74,7 @@ const Article: React.FC<articleInterface> = ({ heading }) => {
               <ShareButton link={url} />
             </div>
           </div>
-          <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl">
+          <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 dark:text-gray-300 lg:mb-6 lg:text-4xl">
             {post.title}
           </h1>
           <address className="flex items-center mb-6 not-italic">
@@ -114,7 +114,7 @@ const Article: React.FC<articleInterface> = ({ heading }) => {
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 to-transparent md:via-transparent"></div>
         </div>
-        <div className="w-full prose md:prose-xl my-4">
+        <div className="w-full prose md:prose-xl my-4 dark:text-gray-400">
           <PortableText value={post.body} />
         </div>
       </div>

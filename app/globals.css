@@ -2,3 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    *{
+      @apply transition-all ease-in-out duration-500
+    }
+    input , textarea{
+      @apply bg-[#f4f5f4] dark:bg-[#d7d8d7]  dark:text-gray-800 outline-none text-sm px-2 py-1 rounded-md focus:outline-none
+    }
+  }
+
+  :root {
+    --background-color : #fff
+  }

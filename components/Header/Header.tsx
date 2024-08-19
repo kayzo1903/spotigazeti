@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { FaList } from "react-icons/fa6";
 import Navsidebar from "./Navsidebar";
+import Themeswitch from "../Theme/Themeswitch";
 
 const Header = () => {
   const [openNavbar, setNavbarOpen] = useState(false);
@@ -12,7 +13,7 @@ const Header = () => {
   };
 
   return (
-    <header className="max-w-screen-xl text-white bg-skin2 mx-auto relative h-16 sticky top-0 z-50">
+    <header className="max-w-screen-xl text-white bg-skin2 mx-auto h-16 sticky top-0 z-50">
       <div className="w-full flex p-5 justify-between items-center">
         <Link
           href="/"
@@ -20,6 +21,7 @@ const Header = () => {
         >
           <span className="text-xl">spotigazeti</span>
         </Link>
+        <Themeswitch />
         <nav className="hidden md:flex flex-wrap items-center text-base justify-center">
           <Link href="/Blog/ligikuu" className="mr-5 hover:text-text">
             ligikuu
