@@ -35,7 +35,7 @@ const Asidecard: React.FC<Asidecard> = ({
       </div>
       <div className="w-4/5 h-20">
         <p className="text-skin2 line-clamp-2">{catTitle}</p>
-        <h6 className="text-sm text-gray-600 font-semibold">{title}</h6>
+        <h6 className="text-sm text-gray-600 font-semibold line-clamp-2">{title}</h6>
         <p className="text-xs text-gray-600">
           by <span className="font-thin">{author}</span>{" "}
           <span>

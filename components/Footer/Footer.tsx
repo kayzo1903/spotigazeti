@@ -15,9 +15,6 @@ const Footer = () => {
           <Link href="/Blog/Bongofleva" className="mr-5 hover:text-text">
             Bongofleva
           </Link>
-          <Link href="/Blog/Burudani" className="mr-5 hover:text-text">
-            Burudani
-          </Link>
           <Link href="/Blog/Jamii" className="mr-5 hover:text-text">
             Jamii
           </Link>
@@ -102,7 +99,7 @@ const Footer = () => {
       </div>
 
       <div className="py-8 text-center text-sm text-white">
-        © 2023 - sportgazeti.com All Rights Reserved.
+        © {new Date().getFullYear()} - sportgazeti.com All Rights Reserved.
       </div>
     </footer>
   );

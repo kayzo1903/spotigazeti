@@ -7,8 +7,10 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   darkMode: "class",
+  
   theme: {
     extend: {
+      
       colors: {
         skin1: "#01473E",
         skin2: "#005E53",

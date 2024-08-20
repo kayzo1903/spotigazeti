@@ -32,9 +32,6 @@ const Header = () => {
           <Link href="/Blog/Bongofleva" className="mr-5 hover:text-text">
             Bongofleva
           </Link>
-          <Link href="/Blog/Burudani" className="mr-5 hover:text-text">
-            Burudani
-          </Link>
           <Link href="/Blog/Jamii" className="mr-5 hover:text-text">
             Jamii
           </Link>

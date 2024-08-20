@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Aside from "../Aside/Aside";
+import Popularpost from "../Aside/Popularpost";
 
 interface NavsidebarProps {
   closeSidebar: () => void;
@@ -32,13 +33,6 @@ const Navsidebar: React.FC<NavsidebarProps> = ({ closeSidebar }) => {
           Bongofleva
         </Link>
         <Link
-          href="/Blog/Burudani"
-          className="hover:text-text"
-          onClick={closeSidebar}
-        >
-          Burudani
-        </Link>
-        <Link
           href="/Blog/Jamii"
           className="hover:text-text"
           onClick={closeSidebar}
@@ -46,8 +40,8 @@ const Navsidebar: React.FC<NavsidebarProps> = ({ closeSidebar }) => {
           Jamii
         </Link>
       </nav>
-      <div onClick={closeSidebar} className="w-full pt-16">
-        <Aside />
+      <div onClick={closeSidebar} className="w-full pt-16 px-4">
+        <Popularpost />
       </div>
     </div>
   );
