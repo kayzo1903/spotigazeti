@@ -9,7 +9,6 @@ export default function Home() {
       <div className="flex flex-nowrap w-full gap-4 pt-8">
         {/* main-section */}
         <section className="w-full md:w-2/3 space-y-4 px-4 shadow-xl py-2">
-          <Hero />
           <PostBanner postcategories="current post" />
           <Posts />
         </section>

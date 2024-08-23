@@ -8,7 +8,7 @@ const Posts = async () => {
   return (
     <div className='flex w-full flex-wrap justify-center md:justify-start items-center   gap-4'>
       {
-        InfoData.slice(0 , 6).map((items , index) =>{
+        InfoData.slice(0 , 8).map((items , index) =>{
           const { categories , mainImage ,  title , publishedAt , slug} = items
           const {title : cattilte } = categories[0]
  

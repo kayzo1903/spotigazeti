@@ -9,7 +9,6 @@ import { urlForImage } from "@/utils/imagebuilder";
 import ShareButton from "../Share/ShareButton";
 import Link from "next/link";
 import ArticleLoadingBlock from "../LoadingBlock/ArticleLoadingBlock";
-import Skeleton from "react-loading-skeleton";
 
 interface articleInterface {
   heading: string;
@@ -114,7 +113,7 @@ const Article: React.FC<articleInterface> = ({ heading }) => {
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 to-transparent md:via-transparent"></div>
         </div>
-        <div className="w-full prose md:prose-xl my-4">
+        <div className="w-full prose md:prose-xl my-4 dark:text-gray-300">
           <PortableText value={post.body} />
         </div>
       </div>

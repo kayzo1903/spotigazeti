@@ -17,8 +17,8 @@ const AsidecardSkeleton: React.FC = () => {
         <p className="text-xs text-gray-600">
           <Skeleton width="40%" /> <Skeleton width="30%" inline={true} />
           <span>
-            <Skeleton width="15%" inline={true} />/
-            <Skeleton width="15%" inline={true} />/
+            <Skeleton width="15%" inline={true} />
+            <Skeleton width="15%" inline={true} />
             <Skeleton width="20%" inline={true} />
           </span>
         </p>

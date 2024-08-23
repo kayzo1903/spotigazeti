@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { ThemeProvider } from "@/components/Theme/Themeprovider";
+import NewsletterSignup from "@/components/newsletter/Newsletter";
 
 const inter = Roboto({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
         disableTransitionOnChange>
         <Header />
         {children}
+        <NewsletterSignup />
         <Footer />
         </ThemeProvider>
       </body>
